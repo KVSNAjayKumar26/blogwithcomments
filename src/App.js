@@ -1,25 +1,21 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react'
+import BlogPost from './components/BlogPost';
+import CommentForm from './components/CommentForm';
+import CommentSection from './components/CommentSection';
+import './App.scss';
+const App = () => {
+  const [comments, setComments] = useState([]);
 
-function App() {
+  const addComment = (comment) => {
+    setComments([...comments, { ...comment, id: comments.length + 1 }]);
+  } 
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className='app'>
+      <BlogPost />
+      <CommentForm addComment={addComment} />
+      <CommentSection comments={comments} />
     </div>
-  );
+  )
 }
 
-export default App;
+export default App

@@ -1,0 +1,28 @@
+.blog-post {
+    padding: 20px;
+    background-color: #f9f9f9;
+    margin-bottom: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 1s ease-in-out;
+
+    .blog-title {
+        color: #333;
+        font-size: 2rem;
+        margin-bottom: 10px;
+    }
+
+    .blog-content {
+        color: #555;
+        line-height: 1.6;
+    }
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
